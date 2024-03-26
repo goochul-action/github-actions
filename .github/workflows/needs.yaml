@@ -5,26 +5,26 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: eho
+      - name: echo
         run: echo "job1 done"
 
   job2:
     runs-on: ubuntu-latest
     needs: [job1]
     steps:
-      - name: eho
+      - name: echo
         run: echo "job2 done"
 
   job3:
     runs-on: ubuntu-latest
     steps:
-      - name: eho
-        run: echo "job3 done"
+      - name: echo
+        run: eho "job3 falied"
           exit 1
 
   job4:
     runs-on: ubuntu-latest
     needs: [job3]
     steps:
-      - name: eho
+      - name: echo
         run: echo "job4 done"
