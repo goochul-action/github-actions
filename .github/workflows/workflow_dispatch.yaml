@@ -11,7 +11,7 @@ on:
         description: "set env"
         required: true
         default: "dev"
-        type: chice
+        type: choice
         options:
           - dev
           - qa
