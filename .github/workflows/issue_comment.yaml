@@ -4,14 +4,14 @@ on: issue_comment
 jobs:
   pr-comment:
     if: ${{ github.event.issue.pull_reqeust }}
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     steps:
       - name: pr comment
         run: echo ${{ guthub.event.issue.pull_reqeust }}
 
   issue-comment:
     if: ${{ !github.event.issue.pull_reqeust }}
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     steps:
       - name: issue comment
         run: echo ${{ !guthub.event.issue.pull_reqeust }}
