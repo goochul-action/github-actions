@@ -1,5 +1,5 @@
 name: context
-on: worflow-dispatch
+on: workflow-dispatch
 
 jobs:
   context:
