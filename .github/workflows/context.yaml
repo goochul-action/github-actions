@@ -1,0 +1,9 @@
+name: context
+on: worflow-dispatch
+
+jobs:
+  context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: githun context
+        run: echo '${{ toJSON(github) }}'
