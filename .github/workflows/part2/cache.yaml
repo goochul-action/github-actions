@@ -1,0 +1,11 @@
+name: cache
+on:
+  push:
+    paths:
+      - "my-app/**" #** 모든 파일 포함
+
+jobs:
+  cache:
+    steps:
+      - name: checkout
+        uses: actions/checkout
