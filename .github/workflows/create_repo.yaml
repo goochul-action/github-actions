@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: gh auto login
         run: |
-          echo ${{ secrets.PRESONAL_ACCESS_TOKEN }} | gh auth login --with --token
+          echo ${{ secrets.PRESONAL_ACCESS_TOKEN }} | gh auth login --with-token
       - name: create-repo
         run: |
           gh repo create goochul-action/${{ inputs.prefix }}-${{ inputs.name }} --public --add-readme
