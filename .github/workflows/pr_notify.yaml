@@ -1,0 +1,32 @@
+name: pr_notify
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  pr_notify:
+    runs-on: ubuntu-latest
+    environment: critical
+    steps:
+      - name: slack
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+              "attachments": [
+                {
+                  "pretext": "issue alert message",
+                  "color": "28a745",
+                  "fields": [
+                    {
+                      "title": "Level : ${{ needs.get-keyword.outputs.level }}",
+                      "short": true,
+                      "value": "issue url : ${{ github.event.pull_request.html_url }}"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
